@@ -1,0 +1,101 @@
+/* pages/login/login.wxss */
+.userinfo {
+  display: flex;
+  position: fixed;
+  top: 36rpx;
+  left: 26rpx;
+}
+
+.userinfo image {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+
+.userinfo text {
+  position: fixed;
+  top: 75rpx;
+  left: 238rpx;
+  font-size: 42rpx;
+}
+
+/* 订单界面 */
+.order-view {
+  display: flex;
+  position: fixed;
+  left: 20rpx;
+  right: 20rpx;
+  top: 246rpx;
+  bottom: 120rpx;
+}
+
+.order-content {
+  margin-top: 50rpx;
+  /* padding-top: 50rpx; */
+}
+
+.order-list {
+  border-top: 1rpx solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.order-less {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15rpx 0;
+}
+
+/* 取消订单 */
+.tab-but {
+  display: inline; 
+  position: absolute;
+  right: 180rpx;
+  /* padding-top: 45rpx; */
+  /* padding-bottom: 30rpx; */
+  /* padding-left: 340rpx; */
+  /* padding-right: 40rpx; */
+}
+/* 再来一单 */
+.tab-get {
+  display: inline; 
+  /* padding: 45rpx 20rpx; */
+  position: absolute;
+  right: 20rpx;
+}
+
+/* 底部按钮 */
+.top-view {
+  display: flex;
+  /* background: linear-gradient(to bottom, #f7d45f, #f7d562, #f8d561, #f9db76, #f9de80); */
+  height: 95rpx;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  position: fixed;
+  /* top: 0; */
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.top-view-flex {
+  display: flex;
+  align-items: center;
+}
+
+.top-view-flex view:nth-child(1) {
+  padding-left: 36rpx;
+}
+.top-view-flex view:nth-child(2) {
+  padding: 0 236rpx;
+}
+.top-view-flex view:nth-child(3) {
+  padding-right: 36rpx;
+}
+/* .top-view-flex view {
+  padding-right: 20rpx;
+  font-size: 52rpx;
+} */

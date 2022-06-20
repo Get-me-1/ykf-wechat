@@ -1,0 +1,83 @@
+/* pages/store/store.wxss */
+.store-content {
+  display: flex;
+}
+
+.store-top {
+  position: absolute;
+  top: 20rpx;
+  left: 200rpx;
+}
+.store-top text {
+  font-size: 56rpx;
+  align-items: center;
+}
+
+.store-name {
+  position: absolute;
+  top: 200rpx;
+  left: 70rpx;
+  padding: 30rpx 20rpx;
+}
+
+.store-name text{
+  font-size: 46rpx;
+}
+
+.store-address {
+  position: absolute;
+  top: 300rpx;
+  left: 70rpx;
+  padding: 30rpx 20rpx;
+}
+
+.store-address text{
+  font-size: 46rpx;
+}
+
+.store-image {
+  position: absolute;
+  width: 230rpx;
+  top: 400rpx;
+  left: 70rpx;
+  padding: 30rpx 20rpx;
+}
+.store-image text {
+  font-size: 46rpx;
+}
+
+.store-image image {
+  padding-top: 30rpx;
+  width: 356rpx;
+  height: 356rpx;
+  border-radius: 24rpx;
+}
+
+.top-view {
+  display: flex;
+  /* background: linear-gradient(to bottom, #f7d45f, #f7d562, #f8d561, #f9db76, #f9de80); */
+  height: 95rpx;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  position: fixed;
+  /* top: 0; */
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.top-view-flex {
+  display: flex;
+  align-items: center;
+}
+
+.top-view-flex view:nth-child(1) {
+  padding-left: 36rpx;
+}
+.top-view-flex view:nth-child(2) {
+  padding: 0 236rpx;
+}
+.top-view-flex view:nth-child(3) {
+  padding-right: 36rpx;
+}

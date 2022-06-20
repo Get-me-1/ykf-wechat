@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    
+    "pages/table/table",
+    "pages/store/store"
+    
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "点餐系统",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-button": "./miniprogram_npm/vant-weapp/button/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

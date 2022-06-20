@@ -1,0 +1,34 @@
+<!--pages/store/store.wxml-->
+<view>
+  <view class="store-content" wx:if="{{storeName}}">
+    <view  class="store-top">
+      <text>欢饮光临本店\n</text>
+      <text>祝您用餐愉快</text>
+    </view>
+    <view  class="store-name">
+      <text>名称:{{storeName}}</text>
+    </view>
+    <view  class="store-address">
+      <text>地址:{{storeAddress}}</text>
+    </view>
+    <view  class="store-image">
+      <text>logo:</text>
+      <image src="{{storeLogo}}" mode="widthFix"></image>
+    </view>
+  </view>
+
+  <view class="top-view">
+    <view><text hidden>就餐人数：</text></view>
+    <view class="top-view-flex">
+      <view class="iconfont icon-shouye1" style="color: #000000; font-weight: 680;">
+        <text style="font-size: 26rpx; display: flex;" bindtap="toDish">首页</text>
+      </view>
+      <view class="iconfont icon-shangjia" style="color: #000000;font-weight: 680;" bindtap="toStore">
+        <text style="display: flex; font-size: 26rpx;">商家</text>
+      </view>
+      <view class="iconfont icon-quanbudingdan" style="color: #000000;font-weight: 680;" bindtap="toBill">
+        <text style="display: flex; font-size: 26rpx;">订单</text>
+      </view>
+    </view>
+  </view>
+</view>

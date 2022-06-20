@@ -1,0 +1,54 @@
+<!--pages/login/login.wxml-->
+<view>
+  <!-- 用户登录信息 -->
+  <view class="userinfo">
+    <block wx:if="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <!-- 其他功能 -->
+  <!-- 订单展示 -->
+  <view class="order-view">
+    <!-- <view class="order-content" wx:for="{{allBill}}" wx:key="index" wx:for-item="bills"> -->
+    <scroll-view class="scroll-Hei" scroll-y scroll-with-animation  scroll-into-view="{{scrollIntoView}}">
+      <view class="order-content" wx:for="{{allBill}}" wx:key="index" wx:for-item="bills" wx:for-index="billIndex">
+        <view class="order-list">
+          <text>菜品名称</text>
+          <text>菜品图片</text>
+          <text>数量</text>
+          <text>价格</text>
+        </view>
+        <view class="order-less" wx:for="{{bills.order}}" wx:for-item="orders" wx:key="index2">
+            <view>{{orders.name}}</view>
+            <view><image src="{{orders.image}}" style="width: 80rpx; height: 80rpx;" mode="widthFix"></image></view>
+            <view>{{orders.count}}</view>
+            <view>{{orders.price}}</view>
+        </view>
+        <view class="tab-but" bindtap="cancelBill" data-cancelindex="{{billIndex}}" wx:if="{{bills.onConfirm == 0 || (bills.onConfirm == 1 && bills.create_date > time)}}">取消订单</view>
+        <view class="tab-get" bindtap="getOneBill" data-getoneindex="{{billIndex}}">再来一单</view>
+    </view>
+    </scroll-view>
+  <!-- </view> -->
+  </view>
+
+
+  <!-- 底部按钮选择 -->
+  <view class="top-view">
+    <view><text hidden>就餐人数：</text></view>
+    <view class="top-view-flex">
+      <view class="iconfont icon-shouye1" style="color: #000000; font-weight: 680;">
+        <text style="font-size: 26rpx; display: flex;" bindtap="toDish">首页</text>
+      </view>
+      <view class="iconfont icon-shangjia" style="color: #000000;font-weight: 680;" bindtap="toStore">
+        <text style="display: flex; font-size: 26rpx;">商家</text>
+      </view>
+      <view class="iconfont icon-quanbudingdan" style="color: #000000;font-weight: 680;" bindtap="toBill">
+        <text style="display: flex; font-size: 26rpx;">订单</text>
+      </view>
+    </view>
+  </view>
+</view>

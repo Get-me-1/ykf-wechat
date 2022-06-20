@@ -1,0 +1,355 @@
+.top-view {
+  display: flex;
+  /* background: linear-gradient(to bottom, #f7d45f, #f7d562, #f8d561, #f9db76, #f9de80); */
+  height: 95rpx;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  position: fixed;
+  /* top: 0; */
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.top-view-flex {
+  display: flex;
+  align-items: center;
+}
+
+.top-view-flex view:nth-child(1) {
+  padding-left: 36rpx;
+}
+.top-view-flex view:nth-child(2) {
+  padding: 0 236rpx;
+}
+.top-view-flex view:nth-child(3) {
+  padding-right: 36rpx;
+}
+
+/* .top-view-flex view {
+  padding-right: 20rpx;
+  font-size: 52rpx;
+} */
+
+/* 点餐界面 */
+.order-view {
+  margin-top: 120rpx;
+}
+
+.commodity {
+  display: flex;
+  position: fixed;
+  /* top: 120rpx; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 95rpx;
+}
+/* 左侧区域 */
+.order-left {
+  background-color: #fafafa;
+  width: 170rpx;
+  overflow-y: auto;
+}
+
+.scroll-Hei view:active {
+  background: #fefefe;
+}
+
+.scroll-Hei view:active::before {
+  background: #333999;
+}
+
+.itemize-text {
+  display: flex;
+  font-size: 28rpx;
+  padding: 30rpx 10rpx;
+  align-items: center;
+  color: #797979;
+}
+.active {
+  display: flex;
+  font-size: 28rpx;
+  padding: 30rpx 10rpx;
+  align-items: center;
+  font-weight: 700;
+  color: #0a0a0a;
+}
+.itemize-text text:nth-child(1) {
+  flex: 1;
+}
+
+.cative text:nth-child(1) {
+  flex: 1;
+}
+
+.itemize-text text:nth-child(2) {
+  display: flex;
+  background-color: #eb5941;
+  border-radius: 50%;
+  font-size: 24rpx;
+  color: #ffffff;
+  width: 40rpx;
+  height: 40rpx;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4rpx;
+}
+
+.active text:nth-child(2) {
+  display: flex;
+  background-color: #eb5941;
+  border-radius: 50%;
+  font-size: 24rpx;
+  color: #ffffff;
+  width: 40rpx;
+  height: 40rpx;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4rpx;
+}
+
+.scroll-Hei {
+  height: 100vh;
+}
+
+/* 右侧区域 */
+.order-right {
+  background-color: #ffffff;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.order-right .box {
+  padding: 0 20rpx;
+}
+
+.classif {
+  font-size: 28rpx;
+  padding: 15rpx 20rpx;
+  color: #797979;
+}
+
+/* 分类商品 */
+.classif-goods {
+  display: flex;
+  padding: 0 20rpx;
+  margin-bottom: 35rpx;
+  height: 150rpx;
+  font-size: 30rpx;
+  justify-content: space-between;
+}
+
+.goods-image image {
+  /* display: block; */
+  display: flex;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 14rpx;
+}
+.goods-price {
+  position: relative;
+  padding: 0 20rpx;
+  flex: 1;
+}
+
+.goods-price text {
+  display: block;
+}
+
+.goods-name {
+  display: flex;
+  position: relative;
+  top: 0;
+  flex-direction: column;
+}
+
+.goods-name text:nth-child(1) {
+  padding-bottom: 10rpx;
+}
+
+.unit-price {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  align-items: baseline;
+}
+
+.Bold {
+  font-weight: bold;
+}
+
+.Symbol {
+  font-size: 20rpx;
+}
+
+.Thinning {
+  font-size: 26rpx;
+  color: #cccccc;
+}
+
+.quantity view {
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  /* padding-right: 50rpx; */
+}
+
+.quantity {
+  display: flex;
+  width: 200rpx;
+  align-items: center;
+  align-self: flex-end;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
+}
+
+/* 购物车展示 */
+.scroll-car {
+  /* height: 36vh; */
+  height: 525rpx;
+  /* padding: 10rpx 0;
+  background-color: #f8da81; */
+}
+.car-show {
+  width: 100%;
+  position: absolute;
+  bottom: 125rpx;
+  left: 0;
+  right: 0;
+  padding: 0 30rpx;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8da81;
+  z-index: 9;
+}
+/* 清空购物车 */
+.car-clear {
+  font-size: 36rpx;
+  padding: 1rpx 20rpx;
+  width: 100%;
+  background-color: #f8da81;
+  position: fixed;
+  right: 0rpx;
+  left: 0;
+  bottom: 647rpx;
+  /* bottom: 575rpx; */
+  /* background-color: #f5f5f5; */
+}
+.car-cate {
+  /* margin-top: 30rpx; */
+  padding-top: 30rpx;
+}
+
+.car-cars {
+  display: flex;
+  padding: 45rpx 30rpx 40rpx 30rpx;
+  /* background-color: aqua; */
+  /* width: 236rpx; */
+  /* position: absolute;
+  top: 45rpx;
+  left: 30rpx;
+  padding: 10rpx 20rpx; */
+}
+
+.car-cars .cars-image image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 12rpx;
+}
+
+.cars-name {
+  /* position: absolute;
+  left: 156rpx;
+  top: 20rpx; */
+  /* background-color: beige; */
+  padding: 20rpx;
+  /* width: 260rpx; */
+  /* height: 20rpx; */
+  font-size: 26rpx;
+}
+
+.cars-price {
+  /* position: absolute;
+  top: 75rpx;
+  left: 156rpx;
+  display: block;
+  background-color: yellow; */
+  height: 20rpx;
+  padding: 20rpx 0rpx;
+  font-size: 26rpx;
+}
+
+.car-number {
+  /* position: absolute;
+  top: 85rpx;
+  right: 86rpx; */
+  display: flex;
+  padding: 56rpx 10rpx 50rpx 240rpx;
+  /* background-color: thistle; */
+}
+
+/* 底部区域 */
+.order-bottom {
+  display: flex;
+  position: fixed;
+  bottom: 85rpx;
+  left: 0;
+  right: 0;
+  padding: 0 20rpx;
+  height: 120rpx;
+  background-color: #fefefe;
+  /* background-color: #141313; */
+  box-shadow: 0rpx -1.9rpx 1rpx 1rpx #f9f9f9;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9;
+}
+
+.Shopping image {
+  /* background-color: #868580; */
+  display: block;
+  width: 75rpx;
+  height: 75rpx;
+}
+
+.Shopping-left {
+  width: 75rpx;
+  height: 75rpx;
+}
+
+.Shopping {
+  display: flex;
+  align-items: center;
+}
+
+.Shopping-number {
+  align-self: flex-start;
+  background: #eb5941;
+  color: #ffffff;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 26rpx;
+}
+
+.Shopping-title {
+  flex: 1;
+  padding: 0 25rpx;
+  color: #999999;
+}
+
+.palce-order button {
+  border: none;
+  background: linear-gradient(to right, #f8da81, #f8d771, #f7d362, #f6cb4a);
+  width: 200rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  border-radius: 50rpx;
+  font-weight: bold;
+  z-index: 9;
+}

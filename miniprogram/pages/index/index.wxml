@@ -1,0 +1,116 @@
+<view>
+  <!-- 界面头部设计  -->
+  <!-- <view class="top-view">
+    <view><text hidden>就餐人数：</text></view>
+    <view class="top-view-flex">
+      <view class="iconfont icon-shangjia" style="color: rgb(17, 50, 235);" bindtap="toStore"></view>
+      <view class="iconfont icon-quanbudingdan" style="color: rgb(17, 50, 235);" bindtap="toBill"></view>
+    </view>
+  </view> -->
+  <!-- 用户点餐界面 -->
+  <view class="order-view" >
+    <view class="commodity" bindtap="closeShow">
+      <!-- 左侧区域 -->
+      <view class="order-left">
+        <scroll-view scroll-y class="scroll-Hei">
+          <view class="{{leftNum == all[index].cid ? 'active': 'itemize-text'}}  " wx:for="{{all}}" wx:key="index" wx:for-item="category"   data-leftindex="{{index}}" bindtap="leftScroll">
+            <text >{{category.category}}</text>
+            <text wx:for="{{cateCount}}" wx:key="index" wx:for-item="cate" wx:if="{{cate.category == category.category && cate.count > 0}}">{{cate.count}}</text>
+          </view>
+        </scroll-view>
+      </view>
+      <!-- 右侧区域 -->
+      <view class="order-right">
+        <scroll-view scroll-y class="scroll-Hei"  scroll-with-animation  scroll-into-view="{{scrollIntoView}}" bindscroll="rightScroll">
+          <view class="box" 
+            wx:for="{{all}}" 
+            wx:for-item="dish1" 
+            wx:key="index2" 
+            wx:for-index="rightIndex"
+            id="{{dish1.cid}}"         
+          >
+            <view class="classif">{{dish1.category}}</view>
+            <view class="box-content" wx:for="{{dish1.dish}}" wx:for-item="dishs" wx:key="index3" wx:for-index="dishIndex">
+              <view class="classif-goods">
+                <view class="goods-image">
+                  <image src="{{dishs.image[0].url}}" style="width: 150rpx; height: 150rpx;"  mode="aspectFill"></image>
+                </view>
+                <view class="goods-price">
+                  <view class="goods-name">
+                    <text class="Bold">{{dishs.name}}</text>
+                    <text wx:if="{{dishs.saleCount > 0}}" class="Thinning">已出售 {{dishs.saleCount}}</text>
+                    <text wx:else class="Thinning">新品推荐</text>
+                  </view>
+                  <view class="unit-price">
+                    <text class="Symbol">￥</text>
+                    <text class="Bold">{{dishs.price}}</text>
+                    <text class="Thinning">/{{dishs.unit}}</text>
+                  </view>
+                  <view class="quantity" >
+                    <view wx:for="{{carList}}" wx:key="index3" wx:for-item="car1" wx:if="{{car1.id == dishIndex && car1.newid == rightIndex && car1.count > 0}}" class="iconfont icon-jianhao1"  data-delindex="{{dishIndex}}" data-newdelindex="{{rightIndex}}" style="font-size: 42rpx; color: rgb(192, 192, 8);" bindtap="delToCar"></view>
+                    <view>
+                      <text wx:for="{{carList}}" wx:key="index4" wx:for-item="car2" wx:if="{{car2.id == dishIndex && car2.newid == rightIndex}}" style="font-size: 34rpx; padding-left: 32rpx;">{{car2.count}}</text>
+                    </view>
+                    <view class="iconfont icon-jiahao" style="font-size: 46rpx; padding-left: 36rpx; padding-right: 20rpx; color: rgb(192, 192, 8);" data-newindex="{{rightIndex}}"  data-index="{{dishIndex}}"  bindtap="addToCar"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view style="height: 400rpx;"></view>
+        </scroll-view>
+      </view>
+
+    </view>
+    <!-- 购物车展示 -->
+    
+    <view class="car-show" wx:if="{{isShowCar && carList.length > 0}}"> 
+      <view class="car-clear">
+        <icon class="iconfont icon-icon" style="padding-left: 550rpx;" bindtap="carClearAll">清空购物车</icon>
+      </view>
+      <scroll-view scroll-y scroll-with-animation class="scroll-car" scroll-into-view="{{scrollView}}">
+        <view wx:for="{{carList}}" wx:key="showIndex" wx:for-item="showCars" class="car-cate" wx:for-index="carindex">
+          <view class="car-cars">
+            <view class="cars-image"><image src="{{showCars.image}}"></image></view>
+            <view class="cars-name"><text>{{showCars.name}}</text></view>
+            <view class="cars-price"><text>￥{{showCars.price}}</text></view>
+            <view class="car-number">
+              <icon class="iconfont icon-jianhao1" style="padding-right: 30rpx; font-size: 45rpx;" data-cardelindex="{{carindex}}" bindtap="delcount"></icon>
+              <text>{{showCars.count}}</text>
+              <icon class="iconfont icon-jiahao" style="padding-left: 30rpx; padding-right: 10rpx; font-size: 45rpx;" data-caraddindex="{{carindex}}" bindtap="addcount"></icon>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>   
+
+    <!-- 底部 -->
+    <view class="order-bottom">
+      <view class="Shopping" style="width: 115rpx;">
+        <view class="Shoppint-left">
+          <image class="iconfont icon-gouwuche" style="font-size: 60rpx;" ></image>
+        </view>
+        <view wx:if="{{carList.length > 0}}" class="Shopping-number" >{{totalCount}}</view>
+      </view>
+      <view class="Shopping-title" bindtap="showCar">￥{{totalPrice}}元</view>
+      <view class="place-order">
+        <button plain="true" bindtap="addBill" disabled="{{carList.length == 0}}">{{title}}</button>
+      </view>
+    </view>
+  </view>
+    <!-- 底部按钮设计  -->
+  <view class="top-view">
+    <view><text hidden>就餐人数：</text></view>
+    <view class="top-view-flex">
+      <view class="iconfont icon-shouye1" style="color: #000000; font-weight: 680;">
+        <text style="font-size: 26rpx; display: flex;" bindtap="toDish">首页</text>
+      </view>
+      <view class="iconfont icon-shangjia" style="color: #000000;font-weight: 680;" bindtap="toStore">
+        <text style="display: flex; font-size: 26rpx;">商家</text>
+      </view>
+      <view class="iconfont icon-quanbudingdan" style="color: #000000;font-weight: 680;" bindtap="toBill">
+        <text style="display: flex; font-size: 26rpx;">订单</text>
+      </view>
+    </view>
+  </view>
+</view>
